@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Bonne nuit, Aina 🌙✨</title>
+  <link href="https://fonts.googleapis.com/css2?family=Parisienne&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+      overflow: hidden;
+      font-family: 'Quicksand', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      color: #fff;
+      text-align: center;
+      position: relative;
+    }
+
+    .stars {
+      width: 2px;
+      height: 2px;
+      background: white;
+      position: absolute;
+      animation: sparkle 2s infinite ease-in-out alternate;
+    }
+
+    @keyframes sparkle {
+      from { opacity: 0.2; }
+      to { opacity: 1; }
+    }
+
+    .button {
+      background-color: #ffb6c1;
+      border: none;
+      padding: 15px 30px;
+      font-size: 1.2rem;
+      border-radius: 30px;
+      color: #fff;
+      cursor: pointer;
+      margin-top: 20px;
+      box-shadow: 0px 0px 10px #ffb6c1;
+      font-family: 'Parisienne', cursive;
+      transition: transform 0.3s;
+      z-index: 2;
+    }
+
+    .button:hover {
+      transform: scale(1.1);
+    }
+
+    .letter-container {
+      display: none;
+      margin-top: 30px;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 30px;
+      border-radius: 20px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 0 20px rgba(255, 192, 203, 0.5);
+      max-width: 700px;
+      max-height: 300px;
+      overflow-y: auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .letter-container::-webkit-scrollbar {
+      width: 8px;
+    }
+    .letter-container::-webkit-scrollbar-thumb {
+      background-color: #ffb6c1;
+      border-radius: 10px;
+    }
+
+    .letter p {
+      font-family: 'Parisienne', cursive;
+      font-size: 1.5rem;
+      margin: 20px 0;
+      white-space: pre-line;
+    }
+
+    .signature {
+      margin-top: 30px;
+      font-size: 1.8rem;
+      color: #ffcad4;
+    }
+
+  </style>
+</head>
+<body>
+
+<div id="stars-container"></div>
+
+<h1>🌙 Une surprise douce pour toi, Aina</h1>
+<button class="button" onclick="showLetter()">Ouvrir la lettre 💌</button>
+
+<div class="letter-container" id="letter">
+  <div class="letter">
+    <p>Ma précieuse Aina,</p>
+
+    <p>Ce soir, il n’y a rien d’ordinaire.  
+Alors que le monde s’endort doucement sous le voile étoilé,  
+je pense à toi avec tendresse.  
+Chaque moment passé à échanger avec toi éclaire mes pensées comme une douce lumière dans la nuit.
+
+Je te souhaite une nuit remplie de paix,  
+où tes rêves soient plus beaux que mille jardins en fleurs,  
+et où ton cœur repose dans un écrin de douceur.
+
+Sache que, même en silence, une pensée délicate vole jusqu’à toi ce soir.
+
+Bonne nuit, Aina.  
+Que demain t'apporte autant de douceur que celle que tu sèmes sans le savoir.
+</p>
+
+    <div class="signature">— Balsama 💖</div>
+  </div>
+</div>
+
+<script>
+function showLetter() {
+  document.getElementById('letter').style.display = 'block';
+}
+
+// Créer plein de petites étoiles
+for (let i = 0; i < 150; i++) {
+  const star = document.createElement('div');
+  star.classList.add('stars');
+  star.style.top = `${Math.random() * 100}vh`;
+  star.style.left = `${Math.random() * 100}vw`;
+  star.style.animationDuration = `${2 + Math.random() * 3}s`;
+  document.getElementById('stars-container').appendChild(star);
+}
+</script>
+
+</body>
+</html>
